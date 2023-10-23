@@ -1,9 +1,10 @@
 package org.example;
+import java.util.Objects;
 
 public abstract class Mage implements Hero
 {
-    private int health = 100;
-    private int mana = 50;
+    private Integer health = 100; //здоровье как класс-обертка
+    private Integer mana = 50; //мана как класс-обертка
     private boolean defending = false;
     @Override
     public int getHealth()
@@ -94,5 +95,37 @@ public abstract class Mage implements Hero
             System.out.println("Недостаточно маны для ульты.");
             mana += 5;
         }
+    }
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + ": Health = " + getHealth() + ", Mana = " + getMana();
+    }
+
+    private int getMana() {
+        return mana;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Mage)) {
+            return false;
+        }
+        Mage other = (Mage) obj;
+        return health.equals(other.health) && mana.equals(other.mana);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(health, mana);
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
     }
 }

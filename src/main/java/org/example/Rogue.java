@@ -1,9 +1,9 @@
 package org.example;
-
+import java.util.Objects;
 public abstract class Rogue implements Hero
 {
-    private int health = 100;
-    private int agility = 20;
+    private Integer health = 100;
+    private Integer agility = 20;
     private boolean defending = false;
     @Override
     public int getHealth() {
@@ -94,5 +94,36 @@ public abstract class Rogue implements Hero
             agility += 5;
         }
     }
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + ": Health = " + getHealth() + ", Mana = " + getAgility();
+    }
 
+    private int getAgility() {
+        return agility;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Rogue)) {
+            return false;
+        }
+        Rogue other = (Rogue) obj;
+        return health.equals(other.health) && agility.equals(other.agility);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(health, agility);
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public void setAgility(int agility) {
+        this.agility = agility;
+    }
 }
