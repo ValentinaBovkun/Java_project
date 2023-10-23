@@ -15,7 +15,7 @@ public class Witch extends Mage
                 System.out.println("Ведьма использует навык -Агония-.");
                 break;
             case 2:
-                System.out.println("Ведьма использует навык -Изьморозь-.");
+                System.out.println("Ведьма использует навык -Мороз-.");
                 break;
             case 3:
                 System.out.println("Ведьма призывает природного союзника.");
