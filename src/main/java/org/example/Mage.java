@@ -98,7 +98,7 @@ public abstract class Mage implements Hero
     }
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + ": Health = " + getHealth() + ", Mana = " + getMana();
+        return this.getClass().getSimpleName() + ": Здоровье = " + getHealth() + ", Мана = " + getMana();
     }
 
     private int getMana() {

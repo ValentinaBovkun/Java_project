@@ -96,7 +96,7 @@ public abstract class Rogue implements Hero
     }
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + ": Health = " + getHealth() + ", Mana = " + getAgility();
+        return this.getClass().getSimpleName() + ": Здоровье = " + getHealth() + ", Мана = " + getAgility();
     }
 
     private int getAgility() {
