@@ -1,5 +1,5 @@
 package org.example;
-
+//собственное исключение, если в опред. ситуации хар-р персонажа в бою не соответствует нужному типу
 public class InvalidCharacterException extends Exception {
     public InvalidCharacterException() {
         super();

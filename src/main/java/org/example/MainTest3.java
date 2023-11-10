@@ -25,7 +25,7 @@ public class MainTest3 {
             }
         } catch (ManaOutOfBoundsException | AgilityOutOfBoundsException e) {
             System.err.println("Ошибка в характеристиках персонажа: " + e.getMessage());
-            throw new InvalidCharacterException("Персонаж не может использовать способность.", e);
+            throw new InvalidCharacterException("Персонаж не может использовать способность.", e); //если персонаж не явл. экземпляром класса Mage или Rogue
         }
     }
 }
