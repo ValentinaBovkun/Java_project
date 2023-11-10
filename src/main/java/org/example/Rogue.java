@@ -51,7 +51,7 @@ public abstract class Rogue implements Hero
         System.out.println("Плут получил " + damage + " урона. Здоровье: " + health);
     }
     @Override
-    public void useSkill(Hero enemy)
+    public void useSkill(Hero enemy) throws AgilityOutOfBoundsException
     {
         if (agility >= 10)
         {
@@ -68,8 +68,8 @@ public abstract class Rogue implements Hero
         }
         else
         {
-            System.out.println("Недостаточно ловкости для специальной атаки.");
             agility += 5;
+            throw new AgilityOutOfBoundsException("Недостаточно ловкости для специальной атаки.");
         }
     }
     @Override

@@ -53,7 +53,7 @@ public abstract class Mage implements Hero
         System.out.println("Маг получил " + damage + " урона. Здоровье: " + health);
     }
     @Override
-    public void useSkill(Hero enemy)
+    public void useSkill(Hero enemy) throws ManaOutOfBoundsException
     {
         if (mana >= 15)
         {
@@ -70,8 +70,8 @@ public abstract class Mage implements Hero
         }
         else
         {
-            System.out.println("Недостаточно маны для специальной атаки.");
             mana += 5;
+            throw new ManaOutOfBoundsException("Недостаточно маны для специальной атаки.");
         }
     }
     @Override
