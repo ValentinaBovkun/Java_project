@@ -2,20 +2,28 @@ package org.example;
 import java.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
+import java.time.LocalDateTime;
 
 public abstract class Mage implements Hero
 {
     private Map<String, Integer> spellCooldowns;
+    private LocalDateTime creationDate;
     private Integer health = 100; //здоровье как класс-обертка
     private Integer mana = 50; //мана как класс-обертка
     private boolean defending = false;
     public Mage() {
+        /* инициализация creationDate текущей датой и временем при создании объекта */
+        this.creationDate = LocalDateTime.now();
         spellCooldowns = new HashMap<>();
         /* инициализируем значения заклинаний со временем восстановления */
         spellCooldowns.put("Fireball", 5);
         spellCooldowns.put("Frost Nova", 8);
         spellCooldowns.put("Arcane Missile", 3);
     }
+    public LocalDateTime getCreationDate() {
+        return creationDate;
+    }
+
     /* добавление заклинания и его времени восстановления в коллекцию */
     public void addSpell(String spellName, int cooldown) {
         spellCooldowns.put(spellName, cooldown);
