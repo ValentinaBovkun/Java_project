@@ -16,6 +16,20 @@ public abstract class Mage implements Hero
         spellCooldowns.put("Frost Nova", 8);
         spellCooldowns.put("Arcane Missile", 3);
     }
+    /* добавление заклинания и его времени восстановления в коллекцию */
+    public void addSpell(String spellName, int cooldown) {
+        spellCooldowns.put(spellName, cooldown);
+    }
+
+    /* получение времени восстановления заклинания по его названию */
+    public int getSpellCooldown(String spellName) {
+        return spellCooldowns.getOrDefault(spellName, -1);
+    }
+
+    /* удаление заклинания из коллекции */
+    public void removeSpell(String spellName) {
+        spellCooldowns.remove(spellName);
+    }
 
     @Override
     public int getHealth()
