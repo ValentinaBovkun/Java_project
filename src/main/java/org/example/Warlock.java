@@ -2,6 +2,12 @@ package org.example;
 
 public class Warlock extends Mage
 {
+    public Warlock() {
+        /* используем метод addSpell из класса Mage для добавления заклинаний */
+        addSpell("Shadow Bolt", 6);
+        addSpell("Immolate", 8);
+        addSpell("Fear", 10);
+    }
     @Override
     public void specialSkill()
     {
