@@ -1,11 +1,22 @@
 package org.example;
 import java.util.Objects;
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class Mage implements Hero
 {
+    private Map<String, Integer> spellCooldowns;
     private Integer health = 100; //здоровье как класс-обертка
     private Integer mana = 50; //мана как класс-обертка
     private boolean defending = false;
+    public Mage() {
+        spellCooldowns = new HashMap<>();
+        /* инициализируем значения заклинаний со временем восстановления */
+        spellCooldowns.put("Fireball", 5);
+        spellCooldowns.put("Frost Nova", 8);
+        spellCooldowns.put("Arcane Missile", 3);
+    }
+
     @Override
     public int getHealth()
     {
